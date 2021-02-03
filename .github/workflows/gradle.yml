@@ -25,7 +25,7 @@ jobs:
     - name: Validate Gradle Wrapper
       uses: gradle/wrapper-validation-action@v1
     - name: Build with Gradle
-      run: ./gradlew build --debug
+      run: ./gradlew build
     - name: Upload APK
       if: ${{ github.repository_owner == 'Gitsaibot' }}
       uses: actions/upload-artifact@v2
