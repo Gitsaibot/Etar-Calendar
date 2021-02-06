@@ -35,5 +35,5 @@ jobs:
       if: ${{ github.repository_owner == 'Gitsaibot' }}
       uses: actions/upload-artifact@v2
       with:
-        name: Etar
+        name: Etar.apk
         path: /home/runner/work/Etar-Calendar/Etar-Calendar/build/outputs/apk/debug/**.apk
