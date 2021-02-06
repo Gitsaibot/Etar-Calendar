@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Etar
-        path: app/build/outputs/apk/debug/**.apk
+        path: /build/outputs/apk/debug/*.apk
