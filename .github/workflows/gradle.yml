@@ -25,31 +25,11 @@ jobs:
       uses: gradle/wrapper-validation-action@v1
     - name: Build with Gradle
       run: ./gradlew build
-        
-  assemble_job:
-    name: Assemble
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Restore Cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-      - name: Assemble Debug
-        run: ./gradlew assembleDebug
-        
-      - name: Upload APK
-        if: ${{ github.repository_owner == 'Gitsaibot' }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: Etar
-          path: app/build/outputs/apk/debug/**.apk
+    - name: Assemble Debug
+      run: ./gradlew assembleDebug
+    - name: Upload APK
+      if: ${{ github.repository_owner == 'Gitsaibot' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: Etar
+        path: app/build/outputs/apk/debug/**.apk
