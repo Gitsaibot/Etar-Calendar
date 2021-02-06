@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Etar
-        path: /Etar-Calendar/build/outputs/apk/debug/**.apk
+        path: /home/runner/work/Etar-Calendar/Etar-Calendar/build/outputs/apk/debug/**.apk
