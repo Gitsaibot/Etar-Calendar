@@ -2521,6 +2521,9 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
         int deltaY = hourStep * totCellHeight;
         int y = i * totCellHeight + mHoursTextHeight / 2 - HOUR_GAP;
         for (; i < 24; i += hourStep) {
+            if (i < 0) {
+                continue;
+            }
             String time = mHourStrs[i];
             canvas.drawText(time, HOURS_LEFT_MARGIN, y, p);
             y += deltaY;
